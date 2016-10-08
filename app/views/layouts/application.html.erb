@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FakeReddit</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= yield :user_name %>
+  <%= yield :create_sub %>
+  <%= yield :all_subs %>
+  <%= yield :sign_in %>
+  <%= yield :log_out %>
+  <%= yield %>
+
+</body>
+</html>

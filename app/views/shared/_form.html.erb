@@ -1,0 +1,16 @@
+<% content_for :sign_in do %>
+  <%= link_to "Sign In", new_session_url %>
+<% end %>
+
+<form action= "<%=action%>" method="post">
+  <%= auth_token %>
+
+  <label for="username">Username</label>
+  <input type="text" name="user[username]" id="username">
+
+  <label for="password">Password</label>
+  <input type="password" name="user[password]" id="password">
+
+  <input type="submit" value="create user">
+
+</form>

@@ -1,0 +1,20 @@
+<h1>  <%= @sub.title %>  </h1>
+<ul>
+    <% content_for :user_name do %>
+      <li><%= current_user.username %></li>
+    <% end %>
+
+    <% content_for :create_sub do %>
+      <li><%= link_to "create a sub", new_sub_url %></li>
+    <% end %>
+
+    <% content_for :all_subs do %>
+      <li> <%= link_to "All subs", subs_url %>  </li>
+    <% end %>
+
+    <% content_for :log_out do %>
+      <li> <%= button_to "Logout", session_url, method: :delete %> </li>
+    <% end %>
+</ul>
+
+<%= link_to "Edit", edit_sub_url(@sub) %>

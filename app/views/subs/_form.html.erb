@@ -1,0 +1,30 @@
+<ul>
+    <% content_for :user_name do %>
+      <li><%= current_user.username %></li>
+    <% end %>
+
+    <% content_for :create_sub do %>
+      <li><%= link_to "create a sub", new_sub_url %></li>
+    <% end %>
+
+    <% content_for :all_subs do %>
+      <li> <%= link_to "All subs", subs_url %>  </li>
+    <% end %>
+
+    <% content_for :log_out do %>
+      <li> <%= button_to "Logout", session_url, method: :delete %> </li>
+    <% end %>
+</ul>
+
+<form action="<%= action %>" method="post">
+  <input type="hidden" name="_method" value="<%=method%>">
+  <%= auth_token %>
+
+  <label for="title">Name</label>
+  <input type="text" name="sub[title]" id="title"><br>
+
+  <label for="description">Description</label>
+  <input type="textarea" name="sub[description]" id="description">
+
+  <input type="submit">
+</form>
